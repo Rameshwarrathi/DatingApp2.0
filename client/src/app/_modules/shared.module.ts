@@ -5,6 +5,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import{TabsModule} from 'ngx-bootstrap/tabs';
 //import { HttpClientModule} from '@angular/common/http';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 @NgModule({
@@ -17,13 +18,15 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     }),
     TabsModule.forRoot(),
     //HttpClientModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    FileUploadModule
   ],
   exports: [
     BsDropdownModule,
     ToastrModule,
     TabsModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    FileUploadModule
   ]
 
 })
