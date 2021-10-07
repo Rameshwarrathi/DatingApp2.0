@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  baseUrl = environment.apiUrl;
   registerMode=false;
   users: any;
   
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
-    this.getUsers()
+    // this.getUsers()
   }
 
   registerToggle(){
@@ -24,11 +26,11 @@ export class HomeComponent implements OnInit {
     this.registerMode=event;
   }
 
-  getUsers(){
-    this.http.get('https://localhost:5001/api/users').subscribe(response=>{
-      this.users=response;
-    },error =>{
-      console.log(error);
-    })
-  }
+  // getUsers(){
+  //   this.http.get('https://localhost:5001/api/users').subscribe(response=>{
+  //     this.users=response;
+  //   },error =>{
+  //     console.log(error);
+  //   })
+  // }
 }
